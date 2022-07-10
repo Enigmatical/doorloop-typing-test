@@ -2,6 +2,9 @@
 
 A Typing Test as part of the DoorLoop Home Assessment.
 
+![Screen Shot 2022-07-10 at 11 40 18 AM](https://user-images.githubusercontent.com/1699544/178153776-e7137317-ced0-4b4f-9e1d-4b9d27782df6.png)
+
+
 ## How To Run
 
 ### `npm install && npm run start`
