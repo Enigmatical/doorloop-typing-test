@@ -13,7 +13,7 @@ interface InputterProps {
  *
  * @param props.onType a callback fired when a keydown event changes the value
  * @param props.onSubmit a callback fired when either <Space> or <Enter> is pressed and a value exists
- * @returns
+ * @returns React.ReactNode
  */
 
 const Inputter = ({ onType, onSubmit }: InputterProps) => {
