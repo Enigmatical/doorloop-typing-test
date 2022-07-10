@@ -34,7 +34,6 @@ const WordBank = ({
   currentIndex,
   typedValue,
   completed,
-  className,
 }: WordBankProps) => {
   const wordRef = createRef<HTMLDivElement>();
 
@@ -46,7 +45,7 @@ const WordBank = ({
   }, [wordRef]);
 
   return (
-    <div className={`overflow-y-hidden h-56 ${className}`}>
+    <div className="overflow-y-hidden h-56 m-8">
       <div className="grid grid-cols-3 gap-5">
         {words.map((word, idx) => {
           if (idx === currentIndex) {

@@ -1,4 +1,5 @@
 import Stat from "./Stat";
+import StatItem from "./StatItem";
 import {
   getCharsPerMinute,
   getCorrectWordCount,
@@ -32,44 +33,42 @@ const TypingResults = ({ completed, handleRestart }: TypingResultsProps) => {
   const mistakes = getMistakes(completed);
 
   return (
-    <div className="">
+    <div>
       <h2 className="text-center text-2xl">Results</h2>
       <div className="grid grid-cols-3 gap-5 m-8">
         <Stat heading="Only Correct">
-          <dt className="text-sm font-medium text-gray-500 truncate">
-            Correct Words
-          </dt>
-          <dd className="mt-1 text-3xl font-semibold text-green-500">
-            {correctCount}
-          </dd>
-          <dt className="text-sm font-medium text-gray-500 truncate">
-            Words Per Minute
-          </dt>
-          <dd className="mt-1 text-3xl font-semibold text-green-500">
-            {correctWPM}
-          </dd>
-          <dt className="text-sm font-medium text-gray-500 truncate">
-            Characters Per Minute
-          </dt>
-          <dd className="mt-1 text-3xl font-semibold text-green-500">
-            {correctCPM}
-          </dd>
+          <StatItem
+            label="Correct Words"
+            value={correctCount}
+            valueClass="text-green-500"
+          />
+          <StatItem
+            label="Word Per Minute"
+            value={correctWPM}
+            valueClass="text-green-500"
+          />
+          <StatItem
+            label="Characters Per Minute"
+            value={correctCPM}
+            valueClass="text-green-500"
+          />
         </Stat>
         <Stat heading="All (including Mistakes)">
-          <dt className="text-sm font-medium text-gray-500 truncate">
-            All Words
-          </dt>
-          <dd className="mt-1 text-3xl font-semibold text-red-500">
-            {correctCount + mistakeCount}
-          </dd>
-          <dt className="text-sm font-medium text-gray-500 truncate">
-            Words Per Minute
-          </dt>
-          <dd className="mt-1 text-3xl font-semibold text-red-500">{allWPM}</dd>
-          <dt className="text-sm font-medium text-gray-500 truncate">
-            Characters Per Minute
-          </dt>
-          <dd className="mt-1 text-3xl font-semibold text-red-500">{allCPM}</dd>
+          <StatItem
+            label="All Words"
+            value={correctCount + mistakeCount}
+            valueClass="text-red-500"
+          />
+          <StatItem
+            label="Word Per Minute"
+            value={allWPM}
+            valueClass="text-red-500"
+          />
+          <StatItem
+            label="Characters Per Minute"
+            value={allCPM}
+            valueClass="text-red-500"
+          />
         </Stat>
         <Stat heading="Mistakes">
           {mistakes.length > 0 && (
